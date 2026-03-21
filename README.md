@@ -165,19 +165,6 @@ service cloud.firestore {
 }
 ```
 
----
-
-## 📤 Push to GitHub
-
-```bash
-cd returnify
-git init
-git add .
-git commit -m "feat: Returnify - campus lost and found app"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/returnify.git
-git push -u origin main
-```
 
 ---
 
