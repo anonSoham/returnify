@@ -136,7 +136,7 @@ firebase init hosting
 firebase deploy
 ```
 
-Your live URL will be: `https://returnify.netlify.app`
+
 
 ---
 
