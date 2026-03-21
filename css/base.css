@@ -1,0 +1,56 @@
+/* ============================================
+   base.css — CSS variables, reset, typography
+   Returnify | DKTE College
+   ============================================ */
+
+:root {
+  --green:   #1D9E75;
+  --green-l: #E1F5EE;
+  --green-d: #085041;
+  --pink:    #D4537E;
+  --pink-l:  #FBEAF0;
+  --amber:   #BA7517;
+  --amber-l: #FAEEDA;
+  --bg:      #F8F7F4;
+  --card:    #FFFFFF;
+  --border:  rgba(0, 0, 0, 0.08);
+  --text:    #1a1a1a;
+  --muted:   #6b6b6b;
+  --radius:  14px;
+  --shadow:  0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

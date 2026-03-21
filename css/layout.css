@@ -1,0 +1,167 @@
+/* ============================================
+   layout.css — page structure & responsive
+   Navbar, Hero, Filters, Grid
+   ============================================ */
+
+/* --- NAVBAR --- */
+nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--green-d);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo {
+  width: 28px;
+  height: 28px;
+  background: var(--green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#user-info {
+  display: none;
+  font-size: 13px;
+  color: var(--muted);
+  align-items: center;
+  gap: 8px;
+}
+#user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- HERO --- */
+.hero {
+  background: var(--green-d);
+  color: white;
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin-bottom: 10px;
+}
+.hero p {
+  opacity: 0.75;
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto 14px;
+}
+.domain-notice {
+  font-size: 13px !important;
+  opacity: 0.65 !important;
+  margin-bottom: 24px !important;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- FILTERS --- */
+.filters {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.filter-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s;
+  color: var(--text);
+}
+.filter-btn.active {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+.search-box {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  background: transparent;
+  width: 200px;
+  color: var(--text);
+}
+.search-box span {
+  padding: 0 12px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* --- ITEMS GRID --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 0 24px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .search-box {
+    width: 100%;
+    margin-left: 0;
+  }
+  .search-box input { width: 100%; }
+
+  .filters {
+    padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .grid {
+    padding: 0 16px 32px;
+    gap: 12px;
+  }
+
+  nav { padding: 0 16px; }
+  .hero { padding: 32px 16px 28px; }
+}

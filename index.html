@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Returnify — Campus Lost & Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">&#128269;</span>
+      Returnify
+    </div>
+    <div class="nav-right">
+      <div id="user-info">
+        <img id="user-avatar" src="" alt="avatar"/>
+        <span id="user-name"></span>
+      </div>
+      <button id="auth-btn" onclick="handleAuth()">Sign in with Google</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Lost something on campus? Returnify it.</h1>
+    <p>Post lost or found items. Help your fellow students recover what matters.</p>
+    <p class="domain-notice">&#128274; Restricted to @dkte.ac.in college email IDs</p>
+    <div class="hero-actions">
+      <button class="btn-post" onclick="openModal('Lost')">&#128681; Report Lost Item</button>
+      <button class="btn-post" onclick="openModal('Found')">&#128994; Report Found Item</button>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters" id="filters">
+    <button class="filter-btn active" onclick="setFilter('All', this)">All Items</button>
+    <button class="filter-btn" onclick="setFilter('Lost', this)">Lost</button>
+    <button class="filter-btn" onclick="setFilter('Found', this)">Found</button>
+    <button class="filter-btn" onclick="setFilter('Electronics', this)">Electronics</button>
+    <button class="filter-btn" onclick="setFilter('Books', this)">Books</button>
+    <button class="filter-btn" onclick="setFilter('Clothing', this)">Clothing</button>
+    <button class="filter-btn" onclick="setFilter('Keys', this)">Keys</button>
+    <button class="filter-btn" onclick="setFilter('Claimed', this)">&#9989; Claimed</button>
+    <div class="search-box">
+      <span>&#128269;</span>
+      <input type="text" id="search-input" placeholder="Search items..." oninput="renderItems()"/>
+    </div>
+  </div>
+
+  <!-- ITEMS GRID -->
+  <main class="grid" id="items-grid"></main>
+
+  <!-- POST ITEM MODAL -->
+  <div class="overlay" id="modal">
+    <div class="modal">
+      <button class="close-modal" onclick="closeModal()">&#10005;</button>
+      <h2 id="modal-title">Report Item</h2>
+      <label>Type</label>
+      <select id="f-type">
+        <option>Lost</option>
+        <option>Found</option>
+      </select>
+      <label>Item Title</label>
+      <input id="f-title" type="text" placeholder="e.g. Black backpack, Blue water bottle"/>
+      <label>Category</label>
+      <select id="f-cat">
+        <option>Electronics</option>
+        <option>Books</option>
+        <option>Clothing</option>
+        <option>Keys</option>
+        <option>ID / Cards</option>
+        <option>Bag / Wallet</option>
+        <option>Other</option>
+      </select>
+      <label>Description</label>
+      <textarea id="f-desc" placeholder="Any identifying details — color, brand, marks..."></textarea>
+      <label>Location</label>
+      <input id="f-loc" type="text" placeholder="e.g. Library 2nd floor, Canteen, Block B"/>
+      <label>Your contact email</label>
+      <input id="f-email" type="email" placeholder="yourname@dkte.ac.in"/>
+      <div class="modal-btns">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-submit" onclick="submitItem()">Post Item</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FIREBASE SDK -->
+  <script type="module" src="js/firebase.js"></script>
+
+</body>
+</html>
