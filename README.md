@@ -193,7 +193,7 @@ Each document in the `items` Firestore collection:
 
 ## 👨‍💻 Built By
 
-**Soham Bhogale**
+**Soham Bhogale and Ojas Watave**
 Web Development Intern — TecSpeak IT solutions
 DKTE College, Ichalkaranji
 
